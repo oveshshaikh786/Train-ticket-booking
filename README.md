@@ -28,10 +28,12 @@ Built with JSON for data persistence and designed as a backend system with plans
    git clone https://github.com/oveshshaikh/train-booking.git
    cd train-booking
 
-2. Install dependencies
+2. Install dependencies:
+    ```bash
      mvn clean install
 
-3. Run the app
+3. Run the app:
+    ```bash
     java -jar target/train-booking.jar
 
 ## Usage
