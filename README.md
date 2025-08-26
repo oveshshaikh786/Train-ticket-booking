@@ -45,4 +45,8 @@ After running, you’ll see options like:
 - 5: Cancel Ticket  
 
 ## Contributing
-Contributions are welcome! Please fork the repo and submit a pull request.
+
+- Contributions are welcome!
+- Please Fork the repo
+- Create a new branch
+- Submit a pull request
