@@ -1,82 +1,51 @@
-# Train Ticket Booking System
+# 🚆 Train Ticket Booking System
 
-A production-oriented backend for train reservations built with Java and Spring Boot. Supports user auth, train schedule browsing, ticket booking and cancellation — containerized with Docker for consistent deployment.
+A Java backend application for managing train bookings via a CLI interface.
+Built with Spring Boot and JSON-based persistence. Frontend and Docker integration are planned for a future version.
 
-## What it does
+---
 
-- User registration and login with JWT authentication
-- Browse train schedules and seat availability
-- Book and cancel tickets with conflict-free seat assignment
-- Persisted storage with MySQL
-- Dockerized for one-command local setup
+## Features
 
-## Tech stack
+- User sign up and login
+- View available train schedules
+- Book and cancel tickets
+- JSON-based data storage (users.json, trains.json)
 
-| Layer | Tech |
-|---|---|
-| Backend | Java 17, Spring Boot 3 |
-| Auth | JWT (JSON Web Tokens) |
-| Database | MySQL |
-| Containerization | Docker, Docker Compose |
-| Build | Gradle |
+---
 
-## Performance
+## Tech Stack
 
-- Designed and load-tested to handle **10,000+ requests/day**
-- API response time **under 200ms** on target endpoints
-- JWT-based auth reduced unauthorized access attempts by **87%** in testing
-- Docker deployment time: **under 8 minutes** from clean environment
+| Layer    | Technology              |
+|----------|-------------------------|
+| Backend  | Java, Spring Boot       |
+| Storage  | JSON files              |
+| Build    | Gradle                  |
 
-## Getting started
+---
 
-**Prerequisites:** Java 17+, Docker, Docker Compose
+## Getting Started
 
 ```bash
-# Clone the repo
 git clone https://github.com/oveshshaikh786/Train-ticket-booking.git
 cd Train-ticket-booking
-
-# Start with Docker Compose
-docker-compose up --build
-
-# Or run locally with Gradle
-./gradlew bootRun
+./gradlew build
+java -jar build/libs/train-ticket-booking.jar
 ```
 
-The API runs on `http://localhost:8080` by default.
+## CLI Menu
 
-## API Overview
+Sign Up
+Login
+View Trains
+Book Ticket
+Cancel Ticket
 
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | Login, returns JWT |
-| GET | `/api/trains` | List available trains |
-| POST | `/api/bookings` | Book a ticket |
-| DELETE | `/api/bookings/:id` | Cancel a booking |
+---
 
-Include `Authorization: Bearer ` on protected routes.
+## Roadmap
 
-## Project structure
+- [ ] Connect to MySQL database
+- [ ] Build React frontend
+- [ ] Complete Docker setup
 
-```
-app/
-├── src/main/java/
-│   ├── auth/          # JWT auth logic
-│   ├── booking/       # Booking service & controller
-│   ├── train/         # Train schedule management
-│   └── user/          # User management
-├── Dockerfile
-└── docker-compose.yml
-```
-
-## What I'd add next
-
-- Redis caching for train schedule lookups
-- Pagination on booking history
-- Email confirmation via SMTP
-- CI/CD pipeline with GitHub Actions
-
-## Author
-
-[Ovesh Shaikh](https://github.com/oveshshaikh786) · [LinkedIn](https://www.linkedin.com/in/oveshshaikh786/)
